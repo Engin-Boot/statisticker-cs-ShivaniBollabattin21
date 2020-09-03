@@ -7,7 +7,14 @@ namespace Statistics
 {
     public class StatsComputer
     {
-        StatsComputer stats = new StatsComputer();
+        public float Average { get;  set; }
+        public float Max { get; set; }
+        public float Min { get; set; }
+
+
+
+        public StatsComputer CalculateStatistics(List<float> numbers) {
+            StatsComputer stats = new StatsComputer();
             if(numbers.Count ==0)
             {
                 stats.Average = float.NaN;
