@@ -5,33 +5,38 @@ using System.Linq;
 
 namespace Statistics
 {
+ 
     public class StatsComputer
     {
-        public float Average { get;  set; }
-        public float Max { get; set; }
-        public float Min { get; set; }
-
-
-
-        public StatsComputer CalculateStatistics(List<float> numbers) {
-            StatsComputer stats = new StatsComputer();
+        
+        public Stats CalculateStatistics(List<float> numbers) {
+            Stats _stats = new Stats();
             if(numbers.Count ==0)
             {
-                stats.Average = float.NaN;
-                stats.Max = float.NaN;
-                stats.Min = float.NaN;
+                _stats.Average = float.NaN;
+                _stats.Max = float.NaN;
+                _stats.Min = float.NaN;
             }
             else
             {
                 float avg = numbers.Average();
                 float max = numbers.Max();
                 float min = numbers.Min();
-                stats.Average = avg;
-                stats.Max = max;
-                stats.Min = min;
+                _stats.Average = avg;
+                _stats.Max = max;
+                _stats.Min = min;
                 
             }
-            return stats;
+            return _stats;
         }
     }
+
+
+    public class Stats
+    {
+        public float Average { get; set; }
+        public float Max { get; set; }
+        public float Min { get; set; }
+    }
+
 }
